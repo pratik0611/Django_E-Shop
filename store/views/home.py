@@ -9,6 +9,7 @@ class Index(View):
 
     def post(self , request):
         product = request.POST.get('product')
+        print(product)
         remove = request.POST.get('remove')
         cart = request.session.get('cart')
         if cart:

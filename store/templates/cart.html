@@ -29,6 +29,12 @@
                     <td>{{product.price|currency}}</td>
                     <td>{{product|cart_quantity:request.session.cart}}</td>
                     <td>{{product|price_total:request.session.cart|currency}}</td>
+                    <form action="" method="POST">
+                      {% csrf_token %}
+                      
+                    <td><input type="submit" class="btn float-right btn-outline-info " value="Remove"></td>
+                    <input hidden type="text" name='product' value='{{product.id}}'>
+                    </form>
                 </tr>
 
                 {% endfor %}
